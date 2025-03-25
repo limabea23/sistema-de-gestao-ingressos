@@ -38,7 +38,7 @@ const createTicket = async (req, res) => {
 const updateTicket = async (req, res) => {
     try {
         const { evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel } = req.body;
-        const updatedTicket = await TicketModel.updateTicket(req.params.id, evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel);
+        const updatedTicket = await ticketModel.updateTicket(req.params.id, evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel);
         if (!updatedTicket) {
             return res.status(404).json({ message: "Ingresso não encontrado." });
         }
@@ -50,7 +50,7 @@ const updateTicket = async (req, res) => {
 
 const deleteTicket = async (req, res) => {
     try {
-        const message = await userTicket.deleteTicket(req.params.id);
+        const message = await ticketModel.deleteTicket(req.params.id);
         res.json(message);
     } catch (error) {
         res.status(500).json({ message: "Erro ao deletar ingresso." });
