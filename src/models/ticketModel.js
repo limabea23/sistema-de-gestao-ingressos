@@ -12,7 +12,7 @@ const getTicketById = async (id) => {
 
 const createTicket = async (evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel) => {
     const result = await pool.query(
-        "INSERT INTO tickets (evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel) VALUES ($1, $2) RETURNING *",
+        "INSERT INTO tickets (evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
         [evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel]
     );
     return result.rows[0];
