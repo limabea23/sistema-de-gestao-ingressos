@@ -1,8 +1,17 @@
 const pool = require("../config/database");
 
-const getTickets = async () => {
-    const result = await pool.query("SELECT * FROM tickets");
-    return result.rows;
+const getTickets = async (name) => {
+    if (!name) {
+        const result = await pool.query(
+            `SELECT * FROM tickets`
+        );
+        return result.rows;
+    } else {
+        const result = await pool.query(
+            `SELECT * FROM tickets WHERE local ILIKE $1`, [`%${name}%`]
+        );
+        return result.rows;
+    }
 };
 
 const getTicketById = async (id) => {
