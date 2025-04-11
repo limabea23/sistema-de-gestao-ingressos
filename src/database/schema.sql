@@ -24,3 +24,9 @@ INSERT INTO tickets (evento, local, data_evento, categoria, tipo_ingresso, preco
 ('Music of the Spheres World Tour', 'Estadio Nilton Santos Engenhao', '2023-03-28', 'Pista', 'Inteira', '520.00', 3546),
 ('Music of the Spheres World Tour', 'Estadio Nilton Santos Engenhao', '2023-03-28', 'Pista VIP', 'Inteira', '950.00', 45),
 ('Music of the Spheres World Tour', 'Estadio Nilton Santos Engenhao', '2023-03-28', 'Camarote', 'Inteira', '2100.00', 112);
+
+INSERT INTO tickets (evento, local, data_evento, categoria, tipo_ingresso, preco, quantidade_disponivel) VALUES
+('Justice World Tour', 'Allianz Parque', '2022-09-14', 'Pista Premium', 'Inteira', '1000.00', 4800),
+('Radical Optimism Tour', 'MorumBIS', '2025-11-15', 'Arquibancada', 'Meia-Entrada', '230.00', 543),
+('Obsession Tour', 'Tokio Marine Hall', '2025-05-02', 'Pista', 'Meia-Entrada', '180.00', 35),
+('Leve Com Você', 'Allianz Parque', '2025-07-19', 'Arquibancada', 'Inteira', '140.00', 2341);
